@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+    </head>
+    <body>
+        <script>
+            var human = {
+              "name" : "taehee",
+              "age" : "27"
+            };
+            document.write("name : " + human.name + "<br>");
+            document.write("age : " + human.age + "<br>");
+            human.resident = "SunChang";
+            document.write("resident: " + human.resident + "<br>");
+            human["height weight"] = "177 70";
+            document.write(human["height weight"] + "<br>");
+        </script>
+    </body>
+</html>
