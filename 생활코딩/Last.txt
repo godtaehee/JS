@@ -1,0 +1,14 @@
+태그의 자식개체를 추가하고싶다면 document객체를 찾아라
+document 객체로 안되면 DOM(Document Object Model)으로 검색하자 document객체는 DOM의 일부다
+웹페이지말고 웹브라우저 자체를 제어해야한다면 window객체
+ajax 웹페이지를 reload하지 않아도 정보를 변경한다면 필요
+cookie 웹페이지가 리로드되도 현재상태 유지하고싶다면
+offline web application 인터넷이 끊겨도 유지되는 웹페이지
+webRTc 화상통신 웹앱을 만들고싶다면
+speech 음성인식, 음성으로 정보전달하고싶으면 speech
+webGL 3차원 게임
+webVR 가상현실
+
+학기중에 구분이 안갔던 html,JS,JQuery,php,ajax가 정말 많이 정리가 되었다
+그게 그언어인거같고 해서 비슷해보이고 해서 정말 헷갈렸는데 정말 많이 되는 도움이 되는 강의였다
+무료로 이러한강의를 들을수있다는게 정말 감사했고 취직하면 후원하러갈것이다.
