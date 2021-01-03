@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            .js{
+                font-weight : bold;
+            }
+            #first{
+                color: #008000;
+            }
+
+        </style>
+    </head>
+    <body>
+    <!--코딩을 하다보면 코드가 비효율적인 부분이 생기기 마련이다.
+    동작하는건 그대로 두고 코드자체를 아주 효율적으로 만들어서
+    가독성을 높히 유지보수 편하게 중복된코드를 낮추고 이러한 작업을 리팩토링이라고한다.-->
+
+    <!--리팩토링 전-->
+        <input id ="night_day" type="button" value="night" onclick="
+            if(document.getElementById('night_day').value === 'night'){
+                document.querySelector('body').style.backgroundColor = 'black';
+                document.querySelector('body').style.color='white';
+                this.value='day';
+            }else{
+                document.querySelector('body').style.backgroundColor='white';
+                document.querySelector('body').style.color='black';
+                this.value='night';
+            }
+        ">
+
+
+    <!--리팩토링 후
+        id를 없애고 this로 대체가 가능하고
+        var타입 target에 document.querySelector를 넣어주었다.
+    -->
+
+    <input type="button" value="night" onclick="
+            var target = document.querySelector('body');
+            if(this.value === 'night'){
+                target.style.backgroundColor = 'black';
+                target.style.color='white';
+                this.value='day';
+            }else{
+                target.style.backgroundColor='white';
+                target.style.color='black';
+                this.value='night';
+            }
+        ">
+
+    </body>
+</html>
