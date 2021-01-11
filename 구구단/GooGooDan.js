@@ -7,7 +7,7 @@ var problem = document.createElement('div');
 var hpBar = document.createElement('div');
 hpBar.textContent='';
 for(let i = 0; i < hp; i++){
-    hpBar.textContent+='#';
+    hpBar.textContent+='❤';
 }
 
 
@@ -17,7 +17,6 @@ startGame();
 
 
 var state = document.createElement('div');
-state.textContent='ssfas';
 newbody.append(state);
 newbody.append(hpBar);
 
@@ -36,6 +35,8 @@ newform.append(newbtn);
 
 newform.addEventListener('submit', judge);
 newbody.append(newform);
+
+
 
 function judge(event){
     event.preventDefault();
@@ -57,15 +58,19 @@ function judge(event){
         hp--;
         hpBar.textContent='';
         for(let i = 0; i < hp; i++){
-            hpBar.textContent+='#';
+            hpBar.textContent+='❤';
     }
     }
 }
 
+var restartBtn = document.createElement('button');
+restartBtn.type='button';
+restartBtn.textContent='다시시작하기!'
+restartBtn.onclick= function reload (){
+    location.reload();
+}
+
 function createRestartBtn(){
-    var restartBtn = document.createElement('button');
-    restartBtn.type='button';
-    restartBtn.value='다시시작하기!'
     document.body.append(restartBtn);
 }
 function startGame(){
