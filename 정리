@@ -1,0 +1,71 @@
+# String 객체
+
+- length: 길이
+- indexOf : 찾고싶은 문자열을 넣으면 찾았다면 처음으로 찾은 그 문자열의 첫번째 인덱스값을 리턴
+- lastIndexOf: 찾고싶은 물자열 끝에서부터 찾기 (첫문자 인덱스값 반환)
+- search: 찾고싶은 문자열 첫 인덱스 반환
+- slice: slice(시작,끝); 시작 ~ 끝-1까지 잘라 새로운 String만듬 -1 =size -1 과 같음 마이너스 인덱스로도 사용가능하다는 말
+- subString: slice랑 비슷 시작점과 끝
+- substr: 시작점에서부터 몇개를 가져올것인지 자리수가 명확할때 ex) 주민등록 앞번호
+- replace : 원하는 문자를 찾아서 바꾸고싶은 문자로 바꿈 str.replace("here", "therer");
+- str.replace(/here/gi, "there");
+- /문자열/g → 슬래시 안에 문자열을 찾는데 글로벌하게 찾아라(g) 문자열 전체에서 그리고 대소문자 무시해라(i)
+- toUpperCase → 모든문자를 대문자로 바꿔라
+- toLowerCase → 모든 문자르 소문자로 바꿔라
+- 디비에서 john, John, JOHN 이놈들을 가져올때 tolower하던지 toupper해서 가져와서 존에 맞는 애들 찾아준다.
+- concat: "Hello" , "World"를 "Hello World"로 바꿔주고싶을때 "Hello".concat(" ", "World"); 요렇게 해주면된다. 문자열 결합
+- trim : 앞뒤로 공백제거 trim
+- padStart: var s = "4"; 이게 있을때 s.padStart(4,0); 이라고하면 0004가 되는데 의미는 4글자를 맞추되 나머지는 0으로채워라 라는말임 날짜에서 일을 저장할때 3일을 03으로 저장하고싶을때 padStart(2,0)을 쓰면되고 만약 15라고 하면 아무것도 안채운다 앞에서부터 채운다
+- padEnd는 뒤에서부터 채운다
+- charAt : 원하는 위치에있는 char값 하나를 가져옴
+- split: 어떤 기준을 가지고 분리 -,공백 등등
+
+var birthday = "1995-04-24"
+
+birthday.subString(0,birthday.indexOf("-"));
+
+# Number 객체
+
+- toString(); 숫자를 문자로 toString(2); 숫자를 이진수로
+- toFixed(n) : 지정된 소수점 자리수까지 반올림으로 표기, n자리까지 반올림해서 표현
+- toPrecision(n) : 정수부 + 소수부 포함해서 n자리 추출
+- NaN(Not a Number)
+- Number(스트링값); → 숫자로 바꿔줌
+- parseInt : parseInt("숫자 문자열") → 숫자만 빼옴, parseInt("문자열 숫자") → NaN
+
+# Boolean 객체
+
+# Array 객체
+
+toString() : 쉼표를기준으로 배열에있는거를 다 문자열로 만들어줌
+
+join(문자열): 문자열을 기준으로 다 붙혀줌 join(",")하면 toString과 같음
+
++= 연산자보다 push가 연산속도가 훨씬빠르다
+
+push: 마지막에 원소를 추가
+
+pop: 마지막 원소 제거하고 그 마지막원소를 반환한다
+
+shift : 배열의 첫번째 element제거 , 제거된 원소 반환
+
+unshift: 배열의 첫번째에 새 원소 추가
+
+splice: 배열 중간에 원소를 추가해주고싶을때 첫번째 - 시작위치, 두번째 삭제할 element갯수, 세번째부터는 추가할 원소들
+concat() : 배열 두개를 합치는것 arr1, arr2 합치고싶으면 arr1.concat(arr2);
+
+slice(): 배열의 일부혹은 전체를 잘라오는것 slice(시작,끝) 시작 ~ 끝-1까지 끝을 입력하지않으면 시작부터 배열의 끝까지 다 가져온다
+
+sort():  사전순으로 정렬 숫자배열은 숫자였던 원소가 문자열로 바뀌어서 sort되기때문에 문자열로 바뀌고나서 첫글자를 기준으로 정렬됨 그러면 숫자를 기준으로 하려면 아래 소스처럼 하면된다
+
+```jsx
+let arr = [123,112,21,55];
+arr.sort(function(a,b) {
+						if(a>b)
+							return 1;
+						else if(a < b)
+							return -1;
+						else
+							return 0;
+});
+```
